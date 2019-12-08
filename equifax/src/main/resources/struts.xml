@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+
+    <constant name="struts.devMode" value="true" />
+    <constant name="struts.localizedTextProvider" value="global-only" />
+
+    <package name="equifax" namespace="/" extends="struts-default">
+        <action name="index" class="de.andielst.equifax.action.login.IndexAction" method="execute">
+            <result name="success">/pages/login.jsp</result>
+        </action>
+        <action name="login" class="de.andielst.equifax.action.login.LoginAction" method="execute">
+            <result name="success">/pages/helloUser.jsp</result>
+            <result name="error">/pages/helloStranger.jsp</result>
+        </action>
+
+    </package>
+
+</struts>
